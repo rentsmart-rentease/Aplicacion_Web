@@ -1,1 +1,6 @@
-<p>upload works!</p>
+<div>
+    <h2>Cargar Contenido Multimedia</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="onUpload()">Subir</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</div>
