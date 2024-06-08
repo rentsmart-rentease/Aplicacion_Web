@@ -1,1 +1,17 @@
-<p>form works!</p>
+<div>
+    <h2>Publicar Anuncio</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="title">Título</label>
+            <input id="title" formControlName="title" />
+            <div *ngIf="formErrors['title']" class="error">{{ formErrors['title'] }}</div>
+        </div>
+        <div>
+            <label for="description">Descripción</label>
+            <textarea id="description" formControlName="description"></textarea>
+            <div *ngIf="formErrors['description']" class="error">{{ formErrors['description'] }}</div>
+        </div>
+        <button type="submit">Publicar</button>
+    </form>
+    <div *ngIf="form.valid && form.submitted" class="success">Anuncio publicado exitosamente.</div>
+</div>
