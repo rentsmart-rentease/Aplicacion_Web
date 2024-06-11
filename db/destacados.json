@@ -19,6 +19,16 @@
       "desc": 0,
       "imagen": "dest-2.jpg",
       "id": "d20d"
+    },
+    {
+      "id": "7bbc",
+      "titulo": "Oficina 3",
+      "condicion": "Oferta",
+      "tamano": 20,
+      "ubicacion": "Lurin, Lima, Perú",
+      "precio": 2000,
+      "desc": 50,
+      "imagen": "dest-2.jpg"
     }
   ]
 }
