@@ -1,1 +1,17 @@
-<p>message works!</p>
+<div>
+    <h2>Mensaje</h2>
+    <p>Mándale un mensaje al propietario sobre alguna duda que tengas o si necesitas información</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <textarea formControlName="message" placeholder="Indica el mensaje para el propietario"></textarea>
+        <div *ngIf="form.controls.message.errors?.required && form.controls.message.touched" class="error">
+            El mensaje es requerido.
+        </div>
+        <div *ngIf="form.controls.message.errors?.minlength && form.controls.message.touched" class="error">
+            El mensaje debe tener al menos 10 caracteres.
+        </div>
+        <input type="file" (change)="onFileSelected($event)" multiple />
+        <button type="submit">Enviar</button>
+    </form>
+    <div *ngIf="message" class="success">{{ message }}</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>
