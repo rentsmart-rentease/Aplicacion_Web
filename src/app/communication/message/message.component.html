@@ -3,10 +3,10 @@
     <p>Mándale un mensaje al propietario sobre alguna duda que tengas o si necesitas información</p>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <textarea formControlName="message" placeholder="Indica el mensaje para el propietario"></textarea>
-        <div *ngIf="form.controls.message.errors?.required && form.controls.message.touched" class="error">
+        <div *ngIf="form.get('message')?.errors?.['required'] && form.get('message')?.touched" class="error">
             El mensaje es requerido.
         </div>
-        <div *ngIf="form.controls.message.errors?.minlength && form.controls.message.touched" class="error">
+        <div *ngIf="form.get('message')?.errors?.['minlength'] && form.get('message')?.touched" class="error">
             El mensaje debe tener al menos 10 caracteres.
         </div>
         <input type="file" (change)="onFileSelected($event)" multiple />
