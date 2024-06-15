@@ -1,5 +1,5 @@
 <mat-dialog-actions align="end" class="header">
-    <button mat-button mat-dialog-close style="color: black;">X</button>
+    <button mat-button mat-dialog-close style="color: black;" class="cerrar"></button>
 </mat-dialog-actions>
 
 <div class="contenedor">
@@ -30,7 +30,7 @@
                         <img src="../../assets/img/buscar.png" alt="buscar" class="img-fluid lupa">
                     </div>
                     <div class="col-12 col-lg-11">
-                        <form>
+                        <form [formGroup]="formGroup" (ngSubmit)="buscar()">
                             <div class="container-fluid" style="margin-top: 20px; margin-bottom: 35px;">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-lg-8 " >
@@ -38,39 +38,33 @@
                                             <label for="buscarInput" class="form-label" style="font-size: 14px;">
                                                 Buscar</label>
                                             <input type="text" class="form-control" id="buscarInput" 
-                                            placeholder="Indica palabras para buscar" required> 
+                                            placeholder="Indica palabras para buscar" 
+                                            formControlName="busqueda" (keyup)="filtroNulo($event)" required> 
                                           </div>
                                     </div>
                                     <div class="col-12 col-lg-4 text-center" style="margin-top: 30px;">
                                         <button type="submit" class="btn btn-primary text border-0 shadow"
-                                        routerLink="resena" routerLinkActive="active">Buscar</button>
+                                        [disabled]="!formGroup.valid">Buscar</button>
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
-                    <div class="container-fluid" style="margin-bottom: 30px;">
-                        <div class="row align-items-center">
-                            <div class="col-2 text-center">
-                                <div class="texto">Filtros:</div>
-                            </div>
-                            <div class="col-2 text-center">
-                                <a class="btn btn-primary border-0 text-center shadow btn-filtro" 
-                                (click)="mostrarRecientes()">Las más recientes</a>
-                            </div>
-                            <div class="col-2 text-center">
-                                <a class="btn btn-primary border-0 text-center shadow btn-filtro" 
-                                (click)="mostrarPositivas()">Positivas</a>
-                            </div>
-                            <div class="col-2 text-center">
-                                <a class="btn btn-primary border-0 text-center shadow btn-filtro" 
-                                (click)="mostrarNegativas()">Negativas</a>
-                            </div>
-                            <div class="col-3 text-center">
-                                <a class="btn btn-primary border-0 text-center shadow btn-s-filtro" 
-                                (click)="mostrarSinFiltros()">Eliminar filtros</a>
-                            </div>
-                        </div>
+                </div>
+            </div>
+
+            <div class="container-fluid s-resultados" *ngIf="!condicion">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <img src="../../assets/img/lupa-s.png" alt="sin-res">
+                    </div>
+                    <div class="col-7 text-center px-5">
+                        <div class="texto">Lo sentimos, no se encontraron resultados 
+                            que coincidan con tu búsqueda. </div>
+                    </div>
+                    <div class="col-7 text-center px-5" style="margin-top: 20px;">
+                        <div class="texto">¿Por qué no intentas realizar una búsqueda con 
+                            términos diferentes o más generales? </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +74,7 @@
                     <div class="col-10 mx-auto" style="margin-top: 40px; margin-bottom: 20px;">
                         <div class="texto ttl" style="margin-left: 10px;">{{titulo}}</div>
                     </div>
-                    <div *ngFor="let item of listaResenas" class="col-10 my-4 mx-auto">
+                    <div *ngFor="let item of resenasFiltradas" class="col-10 my-4 mx-auto">
                         <div class="container-fluid">
                             <div class="row align-items-center justify-content-center">
                                 <div class="col-3">
@@ -110,9 +104,14 @@
                         </div>
                     </div>
 
-                    <div class="col-5 text-center mx-auto my-3">
+                    <div class="col-5 text-center mx-auto my-3" *ngIf="condicion">
                         <a class="btn btn-primary border-0 text-center shadow" style="height: 100%; padding: 10px; max-width: 300px;"
                         routerLink="resena" routerLinkActive="active">Cargar más reseñas</a>
+                    </div>
+
+                    <div class="col-5 text-center mx-auto my-3" *ngIf="!condicion">
+                        <a class="btn btn-primary border-0 text-center shadow" style="height: 100%; padding: 10px; max-width: 300px;"
+                        (click)="limpiar()">Volver</a>
                     </div>
                 </div>
             </div>
