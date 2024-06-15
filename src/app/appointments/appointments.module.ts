@@ -1,15 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ScheduleComponent } from './schedule/schedule.component';
-
-
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ScheduleComponent } from "./schedule/schedule.component";
 
 @NgModule({
-  declarations: [
-    ScheduleComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+  declarations: [ScheduleComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  exports: [ScheduleComponent],
 })
-export class AppointmentsModule { }
+export class AppointmentsModule {}
