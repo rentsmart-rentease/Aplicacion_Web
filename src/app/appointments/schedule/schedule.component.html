@@ -7,9 +7,7 @@
                 {{ appointment.date | date: 'medium' }}
             </option>
         </select>
-        <div *ngIf="form.controls.appointment.errors?.required && form.controls.appointment.touched" class="error">
-            Debe seleccionar un horario.
-        </div>
+        <div *ngIf="appointment?.errors?.['required'] && appointment?.touched" class="error">Debe seleccionar un horario.</div>
         <button type="submit">Agendar</button>
     </form>
     <div *ngIf="message" class="success">{{ message }}</div>
