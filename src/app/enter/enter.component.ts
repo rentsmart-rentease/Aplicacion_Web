@@ -45,7 +45,7 @@ export class EnterComponent implements OnInit {
     const password = this.formGroup.controls["password"].value;
 
     if(datos.find(d => d.email === email && d.password === password)) {
-      this.ruta.navigate(["/main"]);
+      this.ruta.navigate(["/main/home"]);
     }
 
   }
