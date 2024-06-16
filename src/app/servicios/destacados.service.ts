@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class DestacadosService {
 
-  url:string = "http://localhost:4000/destacados"
+  url:string = "https://api-rent-ease.vercel.app/destacados"
 
   constructor(private router: Router) { }
 
