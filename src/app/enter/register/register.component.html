@@ -32,7 +32,7 @@
             <div class="container-fluid g-0" style="margin-top: 30px;">
               <div class="row">
                 <div class="col-10 mx-auto">
-                  <form>
+                  <form [formGroup]="form" (ngSubmit)="signup()">
 
                     <div class="container-fluid g-0" style="margin-bottom: 30px;">
                         <div class="row">
@@ -59,18 +59,18 @@
                         <div class="row">
                             <div class="col" style="margin-right: 10px;">
                                 <div>
-                                    <label for="nombresInput" class="form-label" style="font-size: 14px;">
+                                    <label for="telInput" class="form-label" style="font-size: 14px;">
                                         Teléfono</label>
-                                    <input type="tel" class="form-control" id="telefonoInput" 
+                                    <input type="tel" class="form-control" id="telInput" 
                                     placeholder="Indica tu número de teléfono" required>
                                   </div>
                             </div>
                             <div class="col" style="margin-left: 10px;">
                                 <div>
-                                    <label for="apellidosInput" class="form-label" style="font-size: 14px;">
+                                    <label for="emailInput" class="form-label" style="font-size: 14px;">
                                         Email</label>
-                                    <input type="email" class="form-control" id="apellidosInput" 
-                                    placeholder="Indica tu correo electrónico" required>
+                                    <input type="email" class="form-control" id="emailInput" 
+                                    placeholder="Indica tu correo electrónico" formControlName="email" required>
                                   </div>
                             </div>
                         </div>
@@ -80,17 +80,17 @@
                         <div class="row">
                             <div class="col" style="margin-right: 10px;">
                                 <div>
-                                    <label for="nombresInput" class="form-label" style="font-size: 14px;">
+                                    <label for="contraInput" class="form-label" style="font-size: 14px;">
                                         Contraseña</label>
-                                    <input type="password" class="form-control" id="telefonoInput" 
-                                    placeholder="Indica una contraseña" required>
+                                    <input type="password" class="form-control" id="contraInput" 
+                                    placeholder="Indica una contraseña" formControlName="password" required>
                                   </div>
                             </div>
                             <div class="col" style="margin-left: 10px;">
                                 <div>
-                                    <label for="apellidosInput" class="form-label" style="font-size: 14px;">
+                                    <label for="repContraInput" class="form-label" style="font-size: 14px;">
                                         Repetir contraseña</label>
-                                    <input type="password" class="form-control" id="apellidosInput" 
+                                    <input type="password" class="form-control" id="repContraInput" 
                                     placeholder="Repita la contraseña ingresada" required>
                                   </div>
                             </div>
@@ -100,7 +100,7 @@
                     
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary text border-0"
-                      routerLink="foto" routerLinkActive="active">Registrarse</button>
+                       [disabled]="!form.valid">Registrarse</button>
                     </div>
                     
                   </form>

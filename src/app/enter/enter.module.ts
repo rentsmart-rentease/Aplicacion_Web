@@ -9,6 +9,8 @@ import { FotoComponent } from './foto/foto.component';
 import { DniComponent } from './dni/dni.component';
 import { EndComponent } from './end/end.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { EndComponent } from './end/end.component';
   imports: [
     CommonModule,
     EnterRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class EnterModule { }

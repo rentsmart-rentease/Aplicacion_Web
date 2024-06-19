@@ -1,14 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { datosLogin } from './models/login.model';
 import { Router } from '@angular/router';
-import { FormControl, NonNullableFormBuilder, Validators } from '@angular/forms';
-
-const datos: datosLogin[]= [
-  {
-    email: "rentease@gmail.com",
-    password: "rentease123"
-  }
-];
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-enter',
@@ -17,38 +11,38 @@ const datos: datosLogin[]= [
 })
 export class EnterComponent implements OnInit {
 
-  private readonly formBuilder = inject(NonNullableFormBuilder);
+  form: FormGroup;
 
-  formGroup = this.formBuilder.group({
-    email: ["", Validators.required],
-    password: ["", Validators.required]
-  });
-
-  get emailField(): FormControl<string> {
-    return this.formGroup.controls.email as FormControl<string>;
+  constructor(
+    private loginServicio: LoginService,
+    private fb: FormBuilder,
+    private router: Router,
+  ) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+    });
   }
-  get passwordField(): FormControl<string> {
-    return this.formGroup.controls.password as FormControl<string>;
-  }
-
-  constructor(private ruta: Router) { }
 
   ngOnInit(): void {
   }
 
-  loguearse(){
-    if(this.formGroup.invalid) {
+  login(): void {
+    if (this.form.invalid) {
       return;
     }
 
-    const email = this.formGroup.controls["email"].value;
-    const password = this.formGroup.controls["password"].value;
+    const credentials: datosLogin = this.form.value;
 
-    if(datos.find(d => d.email === email && d.password === password)) {
-      this.ruta.navigate(["/main/home"]);
-    }
-
+    this.loginServicio.login(credentials).subscribe({
+      next: (response: datosLogin) => {
+        this.router.navigate(['/main/home']); // Redirigir a la página principal
+      },
+    });
   }
 
+  controlHasError(control: string, error: string) {
+    return this.form.controls[control].hasError(error);
+  }
 
 }
