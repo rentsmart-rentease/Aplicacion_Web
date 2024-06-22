@@ -20,21 +20,16 @@ import { MultimediaModule } from "./multimedia/multimedia.module";
 import { ValidationModule } from "./validation/validation.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ForumComponent } from './forum/forum.component';
 import { ContactInfoComponent } from './contact-info/contact-info.component';
-
 import { VisualizacionResenasComponent } from './visualizacion-resenas/visualizacion-resenas.component';
 import { RegistroResenaComponent } from './registro-resena/registro-resena.component';
-
-
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BarraFiltroComponent } from './barra-filtro/barra-filtro.component';
 import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visualizacion.component';
 import { InfoPropComponent } from './info-prop/info-prop.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatButtonModule} from '@angular/material/button';
 import { ListingComponent } from './listing/listing.component';
 import { AddListingComponent } from './add-listing/add-listing.component';
 
@@ -45,11 +40,11 @@ const appRoutes: Routes = [
   // Otras rutas según sea necesario
 ];
 
-
 @NgModule({
 
   declarations: [
     AppComponent,
+
     NavbarComponent,
     FooterComponent,
     InfoPropComponent
@@ -60,11 +55,13 @@ const appRoutes: Routes = [
     AddListingComponent,
     VisualizacionResenasComponent,
     RegistroResenaComponent,
-    ContactInfoComponent
+    ContactInfoComponent,
+    ForumComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+
     BrowserAnimationsModule,
     MaterialModule,
     NgbModule,
@@ -78,7 +75,6 @@ const appRoutes: Routes = [
     MultimediaModule,
     ValidationModule,
     AppointmentsModule
-
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
