@@ -4,8 +4,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ValidationModule } from "./validation/validation.module";
-
-
+import { AppComponent } from "./app.component";
+import { AppointmentsModule } from "./appointments/appointments.module";
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -76,7 +76,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MultimediaModule,
-    ValidationModule
+    ValidationModule,
+    AppointmentsModule
 
   ],
   providers: [provideAnimationsAsync()],
