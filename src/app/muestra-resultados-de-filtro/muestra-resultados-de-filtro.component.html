@@ -1,0 +1,22 @@
+<div class="muestra-resultados-de-filtro">
+    <button (click)="mostrarResultados()" class="custom-button small-button">Buscar</button>
+    
+    <div *ngIf="resultadosVisibles" class="resultados">
+      <div class="resultado" *ngFor="let propiedad of propiedades">
+        <div class="card rounded-border">
+          <h3>{{ propiedad.nombre }}</h3>
+          <img [src]="propiedad.imagen" alt="{{ propiedad.nombre }}">
+          <div class="calificacion">
+            <span *ngFor="let estrella of propiedad.calificacion">&#9733;</span>
+          </div>
+          <div class="detalles">
+            <p>{{ propiedad.caracteristicas }}</p>
+          </div>
+          <button class="custom-button small-button center-button">Seleccionar</button>
+        </div>
+      </div>
+    </div>
+    
+    <button *ngIf="resultadosVisibles" (click)="cargarMas()" class="custom-button wider-button">Cargar más opciones</button>
+  </div>
+  
