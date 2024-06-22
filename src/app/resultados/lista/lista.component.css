@@ -1,0 +1,93 @@
+.container-fluid{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.card, .list-group-item{
+    background-color: #D2D5ED;
+    border: 0;
+}
+
+.list-group{
+    margin-top: 20px;
+}
+
+.list-group, .list-group-item{
+    border: 0;
+}
+
+.prop-ttl{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #000000;
+    margin-top: 10px;
+    line-height: 1.2;
+}
+
+.ttl{
+    margin-top: 25px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.card-img{
+    max-width: 250px;
+    max-height: 160px;
+    border-radius: 10px;
+}
+
+.description{
+    color: #F0F2FF;
+    max-width: 270px;
+    background-color: #3B3D4A;
+    margin: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 13px;
+    border-radius: 15px;
+    margin-top: 27px;
+}
+
+.cal-container{
+    margin-top: 30px;
+    margin-left: 10%;
+}
+
+.calificacion{
+    max-width: 150px;
+    height: auto;
+}
+
+.card-body{
+    padding-top:0;
+}
+
+.btn{
+    background-color: #84DCC6;
+    width: 100%; 
+    max-width: 250px;
+    height: 40px;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: #191A20;
+    padding-top: 9px;
+}
+
+.btn:hover{
+    background-color: #A3E8D6;
+    color: #191A20;
+}
+.btn:active, .btn:focus{
+    background-color: #4EA38D !important;
+    color: #F6FBFF !important;
+}
+
+.btn-cargar{
+    max-width: 300px;
+}
