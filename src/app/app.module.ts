@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ContactInfoComponent } from './contact-info/contact-info.component';
 
 import { VisualizacionResenasComponent } from './visualizacion-resenas/visualizacion-resenas.component';
 import { RegistroResenaComponent } from './registro-resena/registro-resena.component';
@@ -49,7 +50,6 @@ const appRoutes: Routes = [
 
   declarations: [
     AppComponent,
-
     NavbarComponent,
     FooterComponent,
     InfoPropComponent
@@ -59,7 +59,8 @@ const appRoutes: Routes = [
     ListingComponent,
     AddListingComponent,
     VisualizacionResenasComponent,
-    RegistroResenaComponent
+    RegistroResenaComponent,
+    ContactInfoComponent
   ],
   imports: [
     AppRoutingModule,

@@ -1,3 +1,4 @@
+
 // app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,6 +7,8 @@ import { VisualizacionResenasComponent } from './visualizacion-resenas/visualiza
 import { BarraFiltroComponent } from './barra-filtro/barra-filtro.component';
 import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visualizacion.component';
 import { MuestraResultadosDeFiltroComponent } from './muestra-resultados-de-filtro/muestra-resultados-de-filtro.component'; 
+import { ContactInfoComponent } from './contact-info/contact-info.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 const routes: Routes = [
   { path: 'barra', component: BarraFiltroComponent },
@@ -21,7 +24,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [
+    AppComponent,
+    ContactInfoComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppRoutingModule { }
+export class AppModule { }
