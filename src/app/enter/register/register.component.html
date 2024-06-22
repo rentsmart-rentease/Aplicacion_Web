@@ -1,0 +1,152 @@
+<div class="container-fluid g-0">
+    <div class="row g-0 vh-100">
+      <div class="col-12 col-xl-6 d-flex">
+        <div class="container-fluid g-0" style="margin-top: 64px;">
+
+            <div class="container-fluid g-0">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center align-items-center col-xl-6 ps-xl-5">
+                        <div class="main"style="max-width: 279px;">
+                            <h1 class="titulo">RentEase</h1>
+                        </div>
+                    </div>
+                    <div class="col-6 text-start" style="padding-left: 46px;">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="col-12 d-none d-xl-block reg" style="font-size: 40px; margin-top: 20px;">
+                                    <div>¡Regístrate</div>
+                                </div>
+                                <div class="col-12 d-none d-xl-block reg" style="font-size: 40px; margin-top: 30px;">
+                                    <div>ahora!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center d-xl-none reg" 
+                    style="font-size: 40px; width: 100%;">
+                        <div>¡Regístrate ahora!</div>
+                    </div>
+                </div>
+            </div>      
+        
+            <div class="container-fluid g-0" style="margin-top: 30px;">
+              <div class="row">
+                <div class="col-10 mx-auto">
+                  <form [formGroup]="form" (ngSubmit)="signup()">
+
+                    <div class="container-fluid g-0" style="margin-bottom: 30px;">
+                        <div class="row">
+                            <div class="col" style="margin-right: 10px;">
+                                <div>
+                                    <label for="nombresInput" class="form-label" style="font-size: 14px;">
+                                        Nombres</label>
+                                    <input type="text" class="form-control" id="nombresInput" 
+                                    placeholder="Indica tus nombres" required> 
+                                  </div>
+                            </div>
+                            <div class="col" style="margin-left: 10px;">
+                                <div>
+                                    <label for="apellidosInput" class="form-label" style="font-size: 14px;">
+                                        Apellidos</label>
+                                    <input type="text" class="form-control" id="apellidosInput" 
+                                    placeholder="Indica tus apellidos" required>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid g-0" style="margin-bottom: 30px;">
+                        <div class="row">
+                            <div class="col" style="margin-right: 10px;">
+                                <div>
+                                    <label for="telInput" class="form-label" style="font-size: 14px;">
+                                        Teléfono</label>
+                                    <input type="tel" class="form-control" id="telInput" 
+                                    placeholder="Indica tu número de teléfono" required>
+                                  </div>
+                            </div>
+                            <div class="col" style="margin-left: 10px;">
+                                <div>
+                                    <label for="emailInput" class="form-label" style="font-size: 14px;">
+                                        Email</label>
+                                    <input type="email" class="form-control" id="emailInput" 
+                                    placeholder="Indica tu correo electrónico" formControlName="email" required>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container-fluid g-0" style="margin-bottom: 40px;">
+                        <div class="row">
+                            <div class="col" style="margin-right: 10px;">
+                                <div>
+                                    <label for="contraInput" class="form-label" style="font-size: 14px;">
+                                        Contraseña</label>
+                                    <input type="password" class="form-control" id="contraInput" 
+                                    placeholder="Indica una contraseña" formControlName="password" required>
+                                  </div>
+                            </div>
+                            <div class="col" style="margin-left: 10px;">
+                                <div>
+                                    <label for="repContraInput" class="form-label" style="font-size: 14px;">
+                                        Repetir contraseña</label>
+                                    <input type="password" class="form-control" id="repContraInput" 
+                                    placeholder="Repita la contraseña ingresada" required>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary text border-0"
+                       [disabled]="!form.valid">Registrarse</button>
+                    </div>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+            
+            <div class="container-fluid d-flex justify-content-center" style="margin-top: 30px; margin-bottom: 30px;">
+              <div class="row w-100 justify-content-center">
+                    <div class="col-3 g-0 text-end">
+                        <div class="linea opacity-100"></div>
+                    </div>
+  
+                    <div class = "col-4 text-center sep"> 
+                    Si ya tiene una cuenta </div>
+
+                    <div class="col-3 g-0 text-start">
+                        <div class="linea opacity-100"></div>
+                    </div>
+
+              </div>
+            </div>
+
+            <div class="container-fluid d-flex justify-content-center" style="margin-bottom: 64px;">
+              <div class="row w-100 justify-content-center align-items-center">
+                <div class="col-7 d-flex justify-content-center">
+                    <a class="btn btn-primary text border-0 d-flex justify-content-center align-items-center"
+                    routerLink="" routerLinkActive="active">
+                        Iniciar Sesión</a>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+
+      </div>
+
+      
+
+      <div class="col-12 col-xl-6 d-none d-xl-flex">
+        <div class="container-fluid g-0 d-flex align-items-center caja">
+              <img src="../../../assets/img/logo rentease.png" 
+              class="img-fluid mx-auto d-block " 
+              alt="logo_rentease" id="img_responsive">
+            </div>
+          </div>
+        </div>
+      </div>

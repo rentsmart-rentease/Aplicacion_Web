@@ -1,0 +1,82 @@
+<div class="container-fluid g-0">
+    <div class="row g-0 vh-100">
+      <div class="col-12 col-xl-6 d-flex">
+        <div class="container-fluid g-0" style="margin-top: 64px;">
+
+            <div class="container-fluid g-0">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center align-items-center col-xl-6 ps-xl-5">
+                        <div class="main"style="max-width: 279px;">
+                            <h1 class="titulo">RentEase</h1>
+                        </div>
+                    </div>
+                    <div class="col-6 text-start" style="padding-left: 46px;">
+                        <div class="container p-0">
+                            <div class="row">
+                                <div class="col-12 d-none d-xl-block reg" style="font-size: 40px; margin-top: 20px;">
+                                    <div>¡Regístrate</div>
+                                </div>
+                                <div class="col-12 d-none d-xl-block reg" style="font-size: 40px; margin-top: 30px;">
+                                    <div>ahora!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-center align-items-center d-xl-none" 
+                    style="font-size: 40px; width: 100%;">
+                        <div>¡Regístrate ahora!</div>
+                    </div>
+                </div>
+            </div>      
+        
+            <div class="container-fluid g-0" style="margin-top: 30px;">
+              <div class="row">
+                <div class="col-10 mx-auto">
+                  <div class="desc-foto">
+                    Como siguiente paso, necesitamos 
+                    que suba una foto de su persona, de hombros para arriba.
+                  </div>
+                </div>
+                <div class="col-10 mx-auto">
+                    <div class="container-fluid" style="margin-top: 10%;">
+                        <div class="row align-items-center justify-content-evenly">
+                            <div class="col-5 text-center">
+                                <img [src]="imagePath" alt="sin-foto" class="img-fluid foto">
+                            </div>
+                            <div class="col-5 text-center">
+                                <div class="subir">Suba su foto</div>
+                                <label for="file" class="label-file btn">Subir foto</label>
+                                <input type="file" id="file" class="input btn" (click)="onButtonClick()">
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="container-fluid d-flex justify-content-center" style="margin-bottom: 64px; margin-top: 80px;">
+              <div class="row w-100 justify-content-center align-items-center">
+                <div class="col-7 d-flex justify-content-center">
+                    <button class="btn btn-primary text border-0 d-flex justify-content-center align-items-center"
+                    routerLink="/register/dni" routerLinkActive="active" [disabled]="condicion==false">
+                        Continuar</button>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+
+      </div>
+
+      
+
+      <div class="col-12 col-xl-6 d-none d-xl-flex">
+        <div class="container-fluid g-0 d-flex align-items-center caja">
+              <img src="../../../assets/img/logo rentease.png" 
+              class="img-fluid mx-auto d-block " 
+              alt="logo_rentease" id="img_responsive">
+            </div>
+          </div>
+        </div>
+      </div>
