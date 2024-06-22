@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { VisualizacionResenasComponent } from './visualizacion-resenas/visualizacion-resenas.component';
+import { RegistroResenaComponent } from './registro-resena/registro-resena.component';
 
 
 import { MaterialModule } from './material/material.module';
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
 
   declarations: [
     AppComponent,
+
     NavbarComponent,
     FooterComponent,
     InfoPropComponent
@@ -54,7 +56,8 @@ const appRoutes: Routes = [
     MuestraResultadosDeFiltroComponent,
     ListingComponent,
     AddListingComponent,
-    VisualizacionResenasComponent
+    VisualizacionResenasComponent,
+    RegistroResenaComponent
   ],
   imports: [
     AppRoutingModule,
