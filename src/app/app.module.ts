@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,11 +11,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MultimediaModule } from "./multimedia/multimedia.module";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -43,7 +47,7 @@ const appRoutes: Routes = [
     BuscaVisualizacionComponent,
     MuestraResultadosDeFiltroComponent,
     ListingComponent,
-    AddListingComponent
+    AddListingComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -57,7 +61,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MultimediaModule
 
   ],
   providers: [provideAnimationsAsync()],
