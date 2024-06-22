@@ -1,0 +1,86 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center header img-fluid">
+            <div class="title" style="font-size: 50px;">Categorías</div>
+        </div>
+
+        <div class="col-12 text-center" style="margin-bottom: 70px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 d-none d-lg-block" style="margin-top: 80px; margin-bottom: 30px;">
+                        <div class="rect">
+                        </div>
+                    </div>
+                    <div class="col-6 text-center mx-auto d-none d-lg-block">
+                        <div class="parr-header">
+                            Encuentra el espacio perfecto para 
+                            cada necesidad en nuestra amplia 
+                            selección de inmuebles
+                        </div>
+                    </div>
+                    <div class="col-7 text-center mx-auto d-block d-lg-none" style="margin-top: 100px; margin-bottom: 40px;">
+                        <div class="parr-header">
+                            Encuentra el espacio perfecto para 
+                            cada necesidad en nuestra amplia 
+                            selección de inmuebles
+                        </div>
+                    </div>
+                    <div class="col-12 d-none d-lg-block" style="margin-top: 30px;">
+                        <div class="rect">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 services text-center">
+            <div class="title-services">¡Te presentamos las diferentes categorías que ofrecemos!</div>
+        </div>
+
+        <div class="col-12 text-center" style="margin-bottom: 70px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12" style="margin-top: 80px; margin-bottom: 30px;">
+                        <div class="rect">
+                        </div>
+                    </div>
+                    <div class="col-6 text-center mx-auto">
+                        <div class="cat-pop">
+                            Categorías más populares
+                        </div>
+                    </div>
+                    <div class="col-12" style="margin-top: 30px;">
+                        <div class="rect">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-10 mx-auto" style="margin-top: 50px; margin-bottom: 150px;">
+            <div class="container-fluid">
+                <div class="row justify-content-evenly">
+                    <div class="col-10 col-lg-3 text-center d-flex justify-content-center mx-3 my-3"
+                    *ngFor="let item of listaCategorias">
+                        <div class="card border-0" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title ttl-tarjeta">{{item.nombre}}</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <img src="../../../assets/img/categories/{{item.foto}}" class="card-img-top img-fluid" alt="cat">
+                            </div>
+                            <div class="card-body cat-descripcion shadow">
+                              <p class="card-text desc">{{item.descripcion}}</p>
+                            </div>
+                            <div class="card-body text-center">
+                                <a routerLink="/main/categories" routerLinkActive="active" 
+                                class="btn btn-primary border-0">Ir a esta categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
