@@ -38,6 +38,8 @@ testem.log
 /typings
 public/
 
+/public
+
 # System files
 .DS_Store
 Thumbs.db

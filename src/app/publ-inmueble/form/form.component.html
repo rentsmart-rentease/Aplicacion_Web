@@ -1,0 +1,125 @@
+<p>form works!</p>
+<div class="py-5">
+
+    <div class="mb-5">
+        <div *ngIf="condicionField.invalid && condicionField.dirty">
+            <div class="alerta" *ngIf="condicionField.hasError('required')">
+                Ingrese el valor de la condicion
+            </div>
+            <div class="alerta" *ngIf="condicionField.hasError('invalidCondicion') && !condicionField.hasError('required')">
+                El valor de la condición no coincide con "Oferta" o "Publicidad"
+            </div>
+        </div>
+        <br>
+        <div *ngIf="descField.invalid && descField.dirty">
+            <div class="alerta" *ngIf="descField.hasError('required')">
+                Ingrese el valor de descuento
+            </div>
+            <div class="alerta" *ngIf="descField.hasError('invalidDescuento') && !descField.hasError('required')">
+                El valor de descuento no es valido
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="formGroup" (ngSubmit)="guardarPropiedad()" class="form-body mx-auto">
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="tituloInput" class="form-label" style="font-size: 14px;">
+                            Título</label>
+                        <input type="text" class="form-control" id="tituloInput" 
+                        placeholder="Título de la publicidad" formControlName="titulo" required> 
+                      </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="condicionInput" class="form-label" style="font-size: 14px;">
+                            Condición</label>
+                        <input type="text" class="form-control" id="condicionInput" 
+                        placeholder="Oferta o Publicidad" formControlName="condicion" required>
+                      </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="tamanoInput" class="form-label" style="font-size: 14px;">
+                            Tamaño</label>
+                        <input type="number" class="form-control" id="tamanoInput" 
+                        placeholder="En metros cuadrados" formControlName="tamano" required>
+                      </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="ubiInput" class="form-label" style="font-size: 14px;">
+                            Ubicación</label>
+                        <input type="text" class="form-control" id="ubiInput" 
+                        placeholder="Ubicación del inmueble" formControlName="ubicacion" required>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="precioInput" class="form-label" style="font-size: 14px;">
+                            Precio</label>
+                        <input type="number" class="form-control" id="precioInput" 
+                        placeholder="En soles" formControlName="precio" required>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="descInput" class="form-label" style="font-size: 14px;">
+                            Descuento (En caso de oferta, 0 si no)</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" id="descInput" 
+                            placeholder="En términos de %" formControlName="desc">
+                            <span class="input-group-text">%</span>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid g-0" style="max-width: 300px; margin-bottom: 30px;">
+            <div class="row">
+                <div class="col">
+                    <div>
+                        <label for="imgInput" class="form-label" style="font-size: 14px;">
+                            Nombre de la imagen</label>
+                        <input type="text" class="form-control" id="imgInput" 
+                        placeholder="nombre.jpg" formControlName="imagen" required>
+                      </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container-fluid text-center" style="margin-top: 50px;">
+          <button type="submit" [disabled]="!formGroup.valid"
+          class="btn btn-primary text border-0"
+          style="max-width: 300px;">Enviar</button>
+        </div>
+    </form>
+</div>
