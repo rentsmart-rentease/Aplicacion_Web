@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material/material.module';
 
+import { ResultadosModule } from './resultados/resultados.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +17,8 @@ import { MaterialModule } from './material/material.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+
+    ResultadosModule
     HttpClientModule
   ],
   providers: [
