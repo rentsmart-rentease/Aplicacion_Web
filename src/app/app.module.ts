@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './material/material.module';
+
 import { ResultadosModule } from './resultados/resultados.module';
 
 @NgModule({
@@ -16,6 +18,7 @@ import { ResultadosModule } from './resultados/resultados.module';
     AppRoutingModule,
     MaterialModule,
     ResultadosModule
+
   ],
   providers: [
     provideAnimationsAsync()
