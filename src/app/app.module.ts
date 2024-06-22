@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 import { VisualizacionResenasComponent } from './visualizacion-resenas/visualizacion-resenas.component';
 import { RegistroResenaComponent } from './registro-resena/registro-resena.component';
 
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
   { path: '', component: BarraFiltroComponent }, // Ruta predeterminada
   // Otras rutas según sea necesario
 ];
+
 
 @NgModule({
 
