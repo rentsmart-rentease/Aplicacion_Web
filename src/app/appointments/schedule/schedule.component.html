@@ -1,0 +1,15 @@
+<div>
+    <h2>Agendar Cita</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="appointment">Seleccione un horario disponible:</label>
+        <select id="appointment" formControlName="appointment">
+            <option *ngFor="let appointment of availableAppointments" [ngValue]="appointment.date">
+                {{ appointment.date | date: 'medium' }}
+            </option>
+        </select>
+        <div *ngIf="appointment?.errors?.['required'] && appointment?.touched" class="error">Debe seleccionar un horario.</div>
+        <button type="submit">Agendar</button>
+    </form>
+    <div *ngIf="message" class="success">{{ message }}</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+</div>

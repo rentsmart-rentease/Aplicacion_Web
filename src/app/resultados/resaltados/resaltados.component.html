@@ -1,0 +1,32 @@
+<div class="resalt-sec">
+    <div class="container-fluid seccion">
+        <div class="row">
+            <div class="col-12">
+                <h2>Publicaciones Destacadas</h2>
+            </div>
+
+            <div *ngFor="let dest of listaDestacados"
+            class="col-12 col-lg-6 d-flex justify-content-center publi">
+                <div class="card mb-3 shadow" style="width: 450px; height: auto;">
+                    <div class="row g-0">
+                      <div class="col-md-4 d-flex align-items-center justify-content-center" style="background-color: #D2D5ED;">
+                        <div class="cont-img">
+                            <img src="../../../assets/img/{{dest.imagen}}" 
+                            class="img-fluid rounded shadow" alt="oficina">
+                        </div>
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="cond">{{dest.condicion}}</div>
+                            <h5 class="card-title">{{dest.titulo}}</h5>
+                            <div class="card-text">{{dest.tamano}} metros cuadrados</div>
+                            <div class="card-text">{{dest.ubicacion}}</div>
+                            <div class="card-text">S/.{{dest.precio}} por mes</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
