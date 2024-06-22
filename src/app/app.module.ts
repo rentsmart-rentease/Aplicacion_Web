@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { VisualizacionResenasComponent } from './visualizacion-resenas/visualizacion-resenas.component';
 
 
 import { MaterialModule } from './material/material.module';
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     MuestraResultadosDeFiltroComponent,
     ListingComponent,
     AddListingComponent,
+    VisualizacionResenasComponent
   ],
   imports: [
     AppRoutingModule,
