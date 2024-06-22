@@ -173,3 +173,17 @@ a{
 .ttl{
     font-size: 20px;
 }
+
+.s-resultados{
+    margin-top: 10%;;
+}
+
+.cerrar{
+    background-image: url("../../assets/img/x.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    margin: 20px;
+}

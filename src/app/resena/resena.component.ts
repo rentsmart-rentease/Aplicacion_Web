@@ -2,8 +2,9 @@ import { ChangeDetectionStrategy, Component, OnInit, inject } from '@angular/cor
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { Resena_Estructura } from './model/resena-model';
-import { listaResenasNegativas, listaResenasOriginales, listaResenasPositivas, listaResenasRecientes } from './data/resenas-data';
-import { CommonModule } from '@angular/common';
+import { listaResenasFiltrado } from './data/resenas-data';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { FormControl, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-resena',
@@ -32,38 +33,64 @@ export class ResenaComponent {
   templateUrl: 'resena-dialog.html',
   styleUrl: './resena-dialog.css',
   standalone: true,
-  imports: [MatDialogModule, MatButtonModule, CommonModule],
+  imports: [MatDialogModule, MatButtonModule, CommonModule, NgFor, ReactiveFormsModule, NgIf],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ResenaDialog implements OnInit{
 
-  listaResenas: Resena_Estructura[] = [];
+  listaResenasFiltro: Resena_Estructura[] = [];
+  resenasFiltradas: Resena_Estructura[] = [];
   titulo:string = "";
+  condicion:boolean = true;
 
   constructor() {}
 
   ngOnInit():void {
-    this.listaResenas = listaResenasOriginales;
+    this.listaResenasFiltro = listaResenasFiltrado;
     this.titulo = "";
+    this.resenasFiltradas = this.listaResenasFiltro;
   }
 
-  mostrarRecientes() {
-    this.listaResenas = listaResenasRecientes;
-    this.titulo = "Mostrando “Las más recientes”";
+  private readonly formBuilder = inject(NonNullableFormBuilder);
+  formGroup = this.formBuilder.group({
+      busqueda: ["", Validators.required]
+  });
+
+  get busquedaField(): FormControl<string> {
+    return this.formGroup.controls.busqueda as FormControl<string>;
   }
 
-  mostrarPositivas() {
-    this.listaResenas = listaResenasPositivas;
-    this.titulo = "Mostrando las “Positivas”";
+  buscar(){
+    if(this.formGroup.invalid) {
+      return;
+    }
+    const busqueda = this.formGroup.controls["busqueda"].value;
+    this.filtro(busqueda);
   }
 
-  mostrarNegativas() {
-    this.listaResenas = listaResenasNegativas;
-    this.titulo = "Mostrando las “Negativas”";
+  filtro(busqueda: string) {
+    busqueda = busqueda.trim().toLowerCase();
+    this.resenasFiltradas = this.listaResenasFiltro.filter(resena => {
+      return resena.comentario.toLowerCase().includes(busqueda);
+    });
+
+    if(this.resenasFiltradas.length == 0){
+      this.condicion = false;
+    }
   }
 
-  mostrarSinFiltros() {
-    this.listaResenas = listaResenasOriginales;
-    this.titulo = "";
+  filtroNulo(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    if(filterValue == ""){
+      this.resenasFiltradas = this.listaResenasFiltro;
+      this.condicion= true;
+    }
   }
+
+  limpiar(){
+    this.formGroup.controls["busqueda"].setValue("");
+    this.resenasFiltradas = this.listaResenasFiltro;
+    this.condicion = true;
+  }
+
 }

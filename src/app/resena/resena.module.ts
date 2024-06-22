@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ResenaRoutingModule } from './resena-routing.module';
 import { ResenaComponent } from './resena.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ResenaComponent } from './resena.component';
   imports: [
     CommonModule,
     ResenaRoutingModule,
-    ResenaComponent
+    ResenaComponent,
+    ReactiveFormsModule
   ]
 })
 export class ResenaModule { }
