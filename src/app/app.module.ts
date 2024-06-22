@@ -1,12 +1,11 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ValidationModule } from "./validation/validation.module";
 import { AppComponent } from "./app.component";
 import { AppointmentsModule } from "./appointments/appointments.module";
-
+import { CommunicationModule } from "./communication/communication.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MuestraResultadosDeFiltroComponent } from './muestra-resultados-de-filtro/muestra-resultados-de-filtro.component';
@@ -76,7 +75,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MultimediaModule,
     ValidationModule,
-    AppointmentsModule
+    AppointmentsModule,
+    CommunicationModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
