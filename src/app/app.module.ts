@@ -17,9 +17,8 @@ import { ResultadosModule } from './resultados/resultados.module';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-
     ResultadosModule
-    HttpClientModule
+
   ],
   providers: [
     provideAnimationsAsync()

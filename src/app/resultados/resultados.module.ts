@@ -3,14 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { ResultadosRoutingModule } from './resultados-routing.module';
 import { ResultadosComponent } from './resultados.component';
-import { ListaComponent } from './lista/lista.component';
+import { ResaltadosComponent } from './resaltados/resaltados.component';
+
 import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   declarations: [
     ResultadosComponent,
-    ListaComponent
+    ResaltadosComponent,
+    ResaltadosComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   exports: [
-    ResultadosComponent, ListaComponent
+    ResultadosComponent,
+    ResaltadosComponent
   ]
 })
 export class ResultadosModule { }
