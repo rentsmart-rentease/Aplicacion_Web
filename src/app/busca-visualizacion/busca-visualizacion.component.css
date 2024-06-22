@@ -1,0 +1,18 @@
+.custom-button {
+    background-color: #84dcc6; /* Color del botón */
+    color: #000000; /* Texto en negro */
+    border: none; /* Quitamos el borde */
+    border-radius: 5px; /* Ajustamos el radio del borde */
+    padding: 10px 20px; /* Ajustamos el espacio interno */
+    cursor: pointer; /* Cambiamos el cursor al pasar por encima */
+    font-weight: bold; /* Texto en negrita */
+    font-family: 'Roboto', sans-serif; /* Usar la misma fuente que las demás */
+}
+
+.container {
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
