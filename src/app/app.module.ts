@@ -12,9 +12,17 @@ import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BarraFiltroComponent } from './barra-filtro/barra-filtro.component';
 import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visualizacion.component';
+import { InfoPropComponent } from './info-prop/info-prop.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatButtonModule} from '@angular/material/button';
+
+import { FooterComponent } from './shared/footer/footer.component';
 
 const appRoutes: Routes = [
   { path: '', component: BarraFiltroComponent }, // Ruta predeterminada
@@ -25,6 +33,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
+    FooterComponent,
+    InfoPropComponent
     BarraFiltroComponent,
     BuscaVisualizacionComponent
   ],
@@ -32,6 +42,9 @@ const appRoutes: Routes = [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    MaterialModule,
+    NgbModule,
     RouterModule.forRoot(appRoutes),
     MatToolbarModule,
     MatButtonModule,
@@ -41,7 +54,7 @@ const appRoutes: Routes = [
     MatSelectModule
 
   ],
-  providers: [],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
