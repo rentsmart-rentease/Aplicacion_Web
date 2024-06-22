@@ -32,6 +32,8 @@ import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visuali
 import { InfoPropComponent } from './info-prop/info-prop.component';
 import { ListingComponent } from './listing/listing.component';
 import { AddListingComponent } from './add-listing/add-listing.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ChatsitoComponent } from './chatsito/chatsito.component';
 
 import { FooterComponent } from './shared/footer/footer.component';
 
@@ -44,7 +46,6 @@ const appRoutes: Routes = [
 
   declarations: [
     AppComponent,
-
     NavbarComponent,
     FooterComponent,
     InfoPropComponent
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     VisualizacionResenasComponent,
     RegistroResenaComponent,
     ContactInfoComponent,
-    ForumComponent
+    ForumComponent,
+    ChatsitoComponent
   ],
   imports: [
     AppRoutingModule,
