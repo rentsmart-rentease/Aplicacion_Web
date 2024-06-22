@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BarraFiltroComponent } from './barra-filtro/barra-filtro.component';
@@ -22,6 +23,8 @@ import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visuali
 import { InfoPropComponent } from './info-prop/info-prop.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatButtonModule} from '@angular/material/button';
+import { ListingComponent } from './listing/listing.component';
+import { AddListingComponent } from './add-listing/add-listing.component';
 
 import { FooterComponent } from './shared/footer/footer.component';
 
@@ -38,7 +41,9 @@ const appRoutes: Routes = [
     InfoPropComponent
     BarraFiltroComponent,
     BuscaVisualizacionComponent,
-    MuestraResultadosDeFiltroComponent
+    MuestraResultadosDeFiltroComponent,
+    ListingComponent,
+    AddListingComponent
   ],
   imports: [
     AppRoutingModule,
