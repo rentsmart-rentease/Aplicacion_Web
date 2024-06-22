@@ -4,8 +4,9 @@ import { BarraFiltroComponent } from './barra-filtro/barra-filtro.component';
 import { BuscaVisualizacionComponent } from './busca-visualizacion/busca-visualizacion.component';
 
 const routes: Routes = [
-  { path: '', component: BarraFiltroComponent },
+  { path: 'barra', component: BarraFiltroComponent },
   { path: 'busca-visualizacion', component: BuscaVisualizacionComponent },
+
 ];
 
 @NgModule({
