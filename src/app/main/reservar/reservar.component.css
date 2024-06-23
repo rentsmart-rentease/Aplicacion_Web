@@ -1,0 +1,168 @@
+h1{
+    font-family: "Rubik", sans-serif;
+    padding: 20px;
+    font-size: 64px;
+  }
+
+  .home {
+    text-align:left;
+    padding: 20px;
+}
+h1{
+    font-size:24px;
+    font-weight: bold;
+}
+p{
+    font-size: 18px;
+}
+
+body{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    overflow-x: hidden;
+}
+*{font-family: Rubik, serif}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    font-family: "Rubik", sans-serif;
+    padding: 20px;
+    font-size: 64px;
+}
+h2{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 50px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.label{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.texto{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.images img{
+    max-width: 100%;
+    height: auto;
+}
+.info, .details, .reviews-container {
+    margin-bottom: 20px;
+}
+.info, .details, .reviews-container {
+    display: flex;
+}
+.info > div, .details > div, .reviews-container > div {
+    flex: 1;
+}
+.reviews-container {
+    align-items: flex-start;
+}
+.reviews-container .reviews {
+    margin-right: 20px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.small-text {
+    font-size: 0.8em;
+    color: grey;
+}
+
+.info{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+    color: black;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.contactar{
+    background-color: #D2D5ED;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.btn{
+    background-color: #84DCC6;
+    width: 100%; 
+    max-width: 250px;
+    height: auto;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: #191A20;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn:hover{
+    background-color: #A3E8D6;
+    color: #191A20;
+}
+.btn:active, .btn:focus{
+    background-color: #4EA38D !important;
+    color: #F6FBFF !important;
+}
+
+.date{
+    background-color: #4B4E6D;
+    width: 100%; 
+    max-width: 300px;
+    height: auto;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    color: #F0F2FF;
+    padding: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+
+.btn-reservar{
+    font-size: 30px;
+}
+
+.btn-volver{
+    font-size: 25px;
+}
+
+.contenedor{
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 15px;
+}

@@ -1,0 +1,180 @@
+h1, h2, h3{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+}
+
+.titulo{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-size: 40px;
+    color: #D2D5ED;
+}
+
+.texto{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+    margin-left: 10px;
+
+}
+
+.caja{
+    background-color: #8B8FAD;
+    
+}
+
+.main{
+    width: 359px;    
+    height: 108px;  
+    background-color: #4B4E6D;  
+    border-radius: 0px; 
+    display: flex;    
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 38px;
+}
+
+.img_responsive {
+    width: 415px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.form-control{
+    border-color: black;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 13.5px;
+    padding-top: 13.5px;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+::placeholder {
+    color: #8B8FAD !important;
+}
+
+.btn{
+    background-color: #84DCC6;
+    width: 100%; 
+    max-width: 320px;
+    height: 44px;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #191A20;
+}
+
+.btn:hover{
+    background-color: #A3E8D6;
+    color: #191A20;
+}
+.btn:active, .btn:focus{
+    background-color: #4EA38D !important;
+    color: #F6FBFF !important;
+}
+
+.linea{
+    display: inline-block;
+    position: relative;
+    border: 0;
+    height: 2px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #84DCC6;
+    margin-bottom: 5px;
+}
+
+.linea::before,
+.linea::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #84DCC6;
+    transform: rotate(45deg);
+    top: -4px;
+}
+
+.linea::before {
+    left: 2px;
+}
+
+.linea::after {
+    right: 2px;
+}
+
+.form-label, .sep, .olv{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Rubik", sans-serif;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #396b5b;
+    color: white;
+    transition: background-color 0.3s ease;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.custom-file-upload:hover {
+    background-color: #a3ebd6;
+}
+
+.custom-file-upload:active {
+    background-color: #82d4ba;
+}
+
+.upload-button {
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #476;
+    color: white;
+}
+
+.upload-button:hover {
+    background-color: #c4f4e3;
+}
+
+.upload-button:active {
+    background-color: #82d4ba;
+}
+
+.upload-button:disabled {
+    background-color: #d1eff2;
+    color: white;
+    cursor: not-allowed;
+}
+
+.error {
+    color: #222;
+    margin-top: 10px;
+}

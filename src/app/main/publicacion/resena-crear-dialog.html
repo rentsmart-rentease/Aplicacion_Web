@@ -1,0 +1,120 @@
+<mat-dialog-actions align="end" class="header">
+    <button mat-button mat-dialog-close style="color: black; border: 0;"class="cerrar"></button>
+</mat-dialog-actions>
+
+<div class="contenedor">
+    <h2 mat-dialog-title class="titulo">Crear una reseña</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="cont">
+
+            <div class="container-fluid" style="margin-top: 30px;">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="col-10 col-lg-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 my-2" style="padding-left: 0;">
+                                    <div class="desc">Inmueble: Oficina con Diseño Contemporáneo</div>
+                                </div>
+
+                                <div class="col-12 my-2" style="padding-left: 0; margin-top: 10px;">
+                                    <div class="container-fluid">
+                                        <div class="row align-items-center">
+                                            <div class="col-12 col-lg-4 my-2" style="padding-left: 0; margin-top: 10px;">
+                                                <div class="desc">Ofrecido por: </div>
+                                            </div>
+                                            <div class="col-8 col-lg-4 my-2" style="padding-left: 0; margin-top: 10px;">
+                                                <div class="desc" style="font-style: italic;">Propietario 1</div>
+                                            </div>
+                                            <div class="col-4 col-lg-4 my-2" style="padding-left: 0; margin-top: 10px;">
+                                                <img src="../../../assets/img/user.png" alt="f-perfil" class="img-fluid foto-perfil">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-12 col-lg-6 my-2" style="padding-left: 0; margin-top: 10px;">
+                                    <div class="desc">Calificación promedio:</div>
+                                </div>
+        
+                                <div class="col-6 col-lg-3 text-start my-2" style="padding-left: 0;">
+                                    <img src="../../assets/img/calificacion.png" alt="calificacion" 
+                                    class="img-fluid calif" style="margin-top: 0;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-lg-6">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 text-center my-3">
+                                    <img src="../../assets/img/foto-ofi.png" alt="foto-oficina" class="img-fluid foto">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12" style="margin-top: 70px;" *ngIf="!condicion">
+                        <div class="indicacion">Rellene los siguientes campos a continuación:</div>
+                    </div>
+        
+                </div>
+            </div>
+
+            <div class="container-fluid buscador" *ngIf="!condicion">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-12 col-lg-11">
+                        <form [formGroup]="formGroup" (ngSubmit)="enviarResena()">
+                            <div class="container-fluid" style="margin-top: 20px; margin-bottom: 35px;">
+                                <div class="row align-items-center">
+                                    <div class="col-12" style="margin-top: 15px; margin-bottom: 30px;">
+                                        <div class="container-fluid">
+                                            <div class="row align-items-center">
+                                                <div class="col-4 p-0">
+                                                    <label for="caliInput" class="form-label" style="font-size: 14px;">
+                                                        Calificación</label>
+                                                </div>
+                                                <div class="col-12 col-lg-4 p-0">
+                                                    <input type="number" class="form-control" id="caliInput" 
+                                                    placeholder="Indica tu calificacion" 
+                                                    formControlName="calificacion"
+                                                    required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-8 " >
+                                        <div>
+                                            <label for="comInput" class="form-label" style="font-size: 14px;">
+                                                Ingrese su comentario</label>
+                                            <textarea type="text" class="form-control" id="comInput" 
+                                            placeholder="Indica su comentario de la reseña" 
+                                            formControlName="comentario"
+                                            required style="height: 150px;"></textarea>
+                                          </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4 text-end" style="margin-top: 30px;">
+                                        <button type="submit" class="btn btn-primary text border-0 shadow"
+                                        [disabled]="!formGroup.valid">Enviar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" *ngIf="condicion" style="margin-bottom: 100px;">
+                <div class="row align-items-center">
+                    <div class="col-12" style="margin-top: 70px;">
+                        <div class="indicacion" style="font-size: 40px;">¡Reseña realizada!</div>
+                    </div>
+                    <div class="col-12" style="margin-top: 30px;">
+                        <div class="indicacion" style="font-size: 40px;">Agradecemos tus comentarios</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </mat-dialog-content>
+</div>

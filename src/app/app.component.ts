@@ -6,8 +6,16 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'rentease';
+  title = 'rentease-app';
+
+  constructor(private router: Router, private viewportScroller: ViewportScroller) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.viewportScroller.scrollToPosition([0, 0]);
+    });
+  }
 }
