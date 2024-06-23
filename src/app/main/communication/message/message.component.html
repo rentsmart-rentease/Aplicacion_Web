@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-10  text-end">
+            <h2>Mensaje</h2>
+            <p>Mándale un mensaje al propietario sobre alguna duda que tengas o si necesitas información</p>
+        </div>
+        <div class="col-10">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <textarea formControlName="message" placeholder="Indica el mensaje para el propietario"></textarea>
+                <div *ngIf="form.get('message')?.errors?.['required'] && form.get('message')?.touched" class="error">
+                    El mensaje es requerido.
+                </div>
+                <div *ngIf="form.get('message')?.errors?.['minlength'] && form.get('message')?.touched" class="error">
+                    El mensaje debe tener al menos 10 caracteres.
+                </div>
+                <input type="file" (change)="onFileSelected($event)" multiple />
+                <button type="submit" style="margin-top: 30px;">Enviar</button>
+            </form>
+        </div>
+        <div class="col-8 text-center">
+            <div *ngIf="message" class="success">{{ message }}</div>
+            <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        </div>
+    </div>
+</div>

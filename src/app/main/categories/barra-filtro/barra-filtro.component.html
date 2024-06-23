@@ -1,0 +1,77 @@
+<div class="container border-0 my-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="overlay-text">Busca tu propio inmueble para alquilar</div>
+    </div>
+    <div class="col-12">
+      <div class="rounded-border">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-10 col-lg-4">
+              <label for="categoria">Categoría</label>
+              <mat-form-field>
+              <mat-label>Insertar Categoría</mat-label>
+              <mat-select id="categoria">
+                <mat-option value="casa">Hogar</mat-option>
+                <mat-option value="vehiculo">Vehículo</mat-option>
+                <mat-option value="comercial">Comercial</mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+
+            <div class="col-10 col-md-5 col-lg-4">
+              <label for="fechaInicio">Fecha de inicio</label>
+              <mat-form-field>
+              <mat-label>dd/mm/aa</mat-label>
+              <input matInput type="text" placeholder="Ej. 10/08/20" pattern="\d{2}/\d{2}/\d{2}" id="fechaInicio">
+              <mat-hint>Escribe la fecha en formato dd/mm/aa</mat-hint>
+              </mat-form-field>
+            </div>
+
+            <div class="col-10 col-md-5 col-lg-4">
+              <label for="fechaFin">Fecha de Fin</label>
+              <mat-form-field>
+              <mat-label>dd/mm/aa</mat-label>
+              <input matInput type="text" placeholder="Ej. 10/08/20" pattern="\d{2}/\d{2}/\d{2}" id="fechaFin">
+              <mat-hint>Escribe la fecha en formato dd/mm/aa</mat-hint>
+              </mat-form-field>
+            </div>
+
+            <div class="col-10 col-lg-12 my-3">
+              <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-lg-8">
+                  <label for="Caracteristicas">Caracteristicas</label>
+                  <mat-form-field>
+                  <mat-label>Indica palabras claves que describan el inmueble que necesitas</mat-label>
+                  <input matInput type="text" placeholder="Ej. 1000" id="precioMaximo">
+                  </mat-form-field>
+                </div>
+    
+                <div class="col-8 col-lg-4 text-center">
+                  <button class="btn btn-primary border-0" (click)="irABuscaVisualizacion()">Buscar</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+
+  </div>
+
+    <div class="container-fluid my-4">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-4 text-center">
+          <div class="label">¿Deseas publicar un inmueble?</div>
+        </div>
+        <div class="col-4 text-center">
+          <a class="btn btn-primary border-0 shadow btn-cargar" 
+          (click)="irAPublicar()">Publica un inmueble</a>
+        </div>
+      </div>
+    </div>
+
+  </div>

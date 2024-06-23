@@ -1,0 +1,116 @@
+h2, h3{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 35px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+h4{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 5%;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.resultado{
+    background-color: #8B8FAD;
+    border-radius: 10px;
+    max-width: 600px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.nombre-cat{
+    margin-top: 50px;
+    font-size: 60px;
+}
+
+.resalt-sec{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.seccion{
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    background-color: #A3E8D6;
+    border-radius: 10px;
+}
+
+.cond{
+    font-family: "Rubik", sans-serif;
+    font-style: italic;
+}
+
+.card-title{
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.card-text{
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.card{
+    border: 0;
+}
+
+.cont-img{
+    margin: 8%;
+    max-width: 200px;
+    height: auto;
+}
+
+.publi{
+    margin-bottom: 20px;
+}
+
+.linea{
+    display: inline-block;
+    position: relative;
+    border: 0;
+    height: 2px;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #84DCC6;
+    margin-bottom: 5px;
+}
+
+.linea::before,
+.linea::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #84DCC6;
+    transform: rotate(45deg);
+    top: -4px;
+}
+
+.linea::before {
+    left: 2px;
+}
+
+.linea::after {
+    right: 2px;
+}

@@ -37,6 +37,10 @@
             <div class="title-services">¡Te presentamos las diferentes categorías que ofrecemos!</div>
         </div>
 
+        <div style="margin-top: 70px;"></div>
+
+        <app-barra-filtro></app-barra-filtro>
+
         <div class="col-12 text-center" style="margin-bottom: 70px;">
             <div class="container-fluid">
                 <div class="row">
@@ -73,7 +77,7 @@
                               <p class="card-text desc">{{item.descripcion}}</p>
                             </div>
                             <div class="card-body text-center">
-                                <a routerLink="/main/categories" routerLinkActive="active" 
+                                <a routerLink="/main/resultados" routerLinkActive="active" 
                                 class="btn btn-primary border-0">Ir a esta categoría</a>
                             </div>
                         </div>

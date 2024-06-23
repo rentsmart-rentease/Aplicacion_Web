@@ -1,0 +1,158 @@
+<div class="card border-0">
+    <div class="row g-0 vh-100">
+      <div class="col-12 col-lg-6 d-flex flex-column">
+        <div class="card-body" style="margin-top: 64px;">
+            <div class="row justify-content-center align-items-center">
+                <img src="../../../assets/img/logo rentease.png" alt="logo" class="img-fluid" style="max-width: 120px; height: auto; margin-bottom: 35px;">
+                <div class="main">
+                    <h1 class="titulo">RentEase</h1>
+                </div>
+            </div>
+            <div class="container text-center">
+                <h2 style="font-size: 40px;">Publicar un inmueble</h2>
+            </div>
+        
+            <div class="container" style="margin-top: 50px;">
+              <div class="row">
+                <div class="col-10 mx-auto">
+                  <form [formGroup]="form" (ngSubmit)="enviar()">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-5 my-2">
+                                            <label for="catInput" class="form-label" style="font-size: 14px;margin: 0;">Categoría del inmueble: </label>
+                                        </div>
+                                        <div class="col-10 col-md-7 my-2">
+                                            <input type="text" class="form-control" id="catInput" 
+                                            placeholder="Indica la categoría" formControlName="categoria" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-5 my-2">
+                                            <label for="precioInput" class="form-label" style="font-size: 14px; margin: 0;">Precio de alquiler por mes (S/.): </label>
+                                        </div>
+                                        <div class="col-10 col-md-7 my-2">
+                                            <input type="number" class="form-control" formControlName="precio" id="precioInput" 
+                                            placeholder="Indica el precio mensual" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-5 my-2">
+                                            <label for="catInput" class="form-label" style="font-size: 14px;margin: 0;">Imágenes o vídeos del inmueble: </label>
+                                        </div>
+                                        <div class="col-10 col-md-7 my-2 text-center">
+                                            <label class="custom-file-upload">
+                                                <input type="file" (change)="onFileSelected1($event)" />
+                                                Subir archivo
+                                            </label>
+                                            <p *ngIf="errorMessage1" class="error">{{ errorMessage1 }}</p>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <div *ngIf="condicion1" class="titulo" style="font-size: 12px; color: black">
+                                                Archivos subidos: imagen.png - video.mov</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 text-start my-5">
+                                <div class="texto">Seguridad y formalidad</div>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-5 my-2">
+                                            <label for="catInput" class="form-label" style="font-size: 14px;margin: 0;">Documentos de propiedad: </label>
+                                        </div>
+                                        <div class="col-10 col-md-7 my-2 text-center">
+                                            <label class="custom-file-upload">
+                                                <input type="file" (change)="onFileSelected2($event)" />
+                                                Subir archivo
+                                            </label>
+                                            <p *ngIf="errorMessage2" class="error">{{ errorMessage2 }}</p>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <div *ngIf="condicion2" class="titulo" style="font-size: 12px; color: black">
+                                                Archivos subidos: imagen.png - video.mov</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-5 my-2">
+                                            <label for="catInput" class="form-label" style="font-size: 14px;margin: 0;">Documentos de funcionamiento: </label>
+                                        </div>
+                                        <div class="col-10 col-md-7 my-2 text-center">
+                                            <label class="custom-file-upload">
+                                                <input type="file" (change)="onFileSelected3($event)" />
+                                                Subir archivo
+                                            </label>
+                                            <p *ngIf="errorMessage3" class="error">{{ errorMessage3 }}</p>
+                                        </div>
+                                        <div class="col-12 text-end">
+                                            <div *ngIf="condicion3" class="titulo" style="font-size: 12px; color: black">
+                                                Archivos subidos: imagen.png - video.mov</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 my-4 text-center">
+                                <button type="submit" class="btn btn-primary text border-0" 
+                                [disabled]="!continuar">Continuar</button>
+                            </div>
+
+                            <div class="col-12 d-block d-lg-none text-center my-5">
+                                <a type="submit" class="btn btn-primary text border-0" style="padding-top:10px"
+                                routerLink="/main/home" routerLinkActive="active">Volver</a>
+                            </div>
+
+                            <div style="margin-bottom: 40px;"></div>
+
+                        </div>
+                    </div>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        </div>
+
+      
+
+        <div class="col-12 col-lg-6 d-none d-lg-flex">
+            <div class="container d-flex align-items-center justify-content-center caja">
+                <div class="row justify-content-center">
+                    <div class="col-12" style="padding: 100px;">
+                        <img src="../../assets/img/publicar.png" 
+                        class="img-fluid mx-auto d-block img_responsive" 
+                        alt="logo_rentease">
+                    </div>
+                    <div class="col-4" style="margin-top: 50px;">
+                        <a type="submit" class="btn btn-primary text border-0" style="padding-top:10px"
+                        routerLink="/main/home" routerLinkActive="active">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

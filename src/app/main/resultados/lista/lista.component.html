@@ -1,0 +1,40 @@
+<div class="container-fluid" style="padding-left: 15%; padding-right: 15%;">
+    <div class="row">
+        <div *ngFor="let info of listaInfoPropiedades" class="col-12 col-md-6 col-xl-4 d-flex justify-content-center my-3">
+            <div class="card" style="max-width: 370px;">
+                <div class="card-body">
+                    <div class="ttl">
+                        <h5 class="card-title text-start prop-ttl">{{info.title}}</h5>
+                    </div>
+                </div>
+                <div class="text-center mx-3">
+                    <img src="../../../assets/img/{{info.image}}" 
+                    class="card-img shadow" alt="oficina">
+                </div>
+
+                <div class="cal-container">
+                    <img src="../../../assets/img/{{info.n_stars}}" alt="estrellas"
+                    class="card-img calificacion">
+                </div>
+
+                <div class="card-body">
+                    <div class="description shadow">
+                        <div>{{info.size}} metros cuadrados</div>
+                        <div>{{info.location}}</div>
+                        <div>S/.{{info.price}} soles por mes</div>
+                    </div>
+                </div>
+                <div class="card-body text-center" style="margin-bottom: 20px;">
+                    <a class="btn btn-primary text border-0 text-center shadow" 
+                    routerLink="/main/publicacion" routerLinkActive="active">Seleccionar</a>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-12 text-center" style="margin-top: 30px; margin-bottom: 50px;">
+            <a class="btn btn-primary text border-0 text-center shadow btn-cargar" 
+            (click)="addData()">Cargar más opciones</a>
+        </div>
+
+    </div>
+</div>

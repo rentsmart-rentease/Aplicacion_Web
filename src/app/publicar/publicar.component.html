@@ -1,0 +1,124 @@
+<div class="card border-0">
+    <div class="row g-0 vh-100">
+      <div class="col-12 col-lg-6 d-flex flex-column">
+        <div class="card-body" style="margin-top: 64px;">
+            <div class="row justify-content-center align-items-center">
+                <img src="../../../assets/img/logo rentease.png" alt="logo" class="img-fluid" style="max-width: 120px; height: auto; margin-bottom: 35px;">
+                <div class="main">
+                    <h1 class="titulo">RentEase</h1>
+                </div>
+            </div>
+            <div class="container text-center">
+                <h2 style="font-size: 40px;">Publicar un inmueble</h2>
+            </div>
+        
+            <div class="container" style="margin-top: 50px;">
+              <div class="row">
+                <div class="col-10 mx-auto">
+                  <form [formGroup]="form" (ngSubmit)="registro()">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-4">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="tituloInput" class="form-label" style="font-size: 14px;">Título de la publicación</label>
+                                            <input type="text" class="form-control" id="tituloInput" 
+                                            placeholder="Indica el título" formControlName="titulo" required>
+                                        </div>
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="descInput" class="form-label" style="font-size: 14px;">Descripción</label>
+                                            <input type="text" class="form-control" id="descInput"
+                                            placeholder="Indica la descripción" formControlName="descripcion" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-4">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="ubiInput" class="form-label" style="font-size: 14px;">Ubicación</label>
+                                            <input type="text" class="form-control" id="ubiInput" 
+                                            placeholder="Indica la dirección" formControlName="ubicacion" required>
+                                        </div>
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="tamInput" class="form-label" style="font-size: 14px;">Tamaño</label>
+                                            <input type="text" class="form-control" id="tamInput"
+                                            placeholder="Indica el tamaño (en m²)" formControlName="tamano" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-4">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="numInput" class="form-label" style="font-size: 14px;">Número de personas máx.</label>
+                                            <input type="text" class="form-control" id="numInput" 
+                                            placeholder="Indica el número máximo" formControlName="num_personas" required>
+                                        </div>
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="equInput" class="form-label" style="font-size: 14px;">Equipamiento</label>
+                                            <input type="text" class="form-control" id="equInput"
+                                            placeholder="Indica el equipamiento del inmueble" formControlName="equipamiento" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <div class="container-fluid">
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-10 col-md-6 my-2">
+                                            <label for="accInput" class="form-label" style="font-size: 14px;">Accesibilidad</label>
+                                            <input type="text" class="form-control" id="accInput" 
+                                            placeholder="Indica la accesibilidad del inmueble" formControlName="accesibilidad" required>
+                                        </div>
+                                        <div class="col-10 col-md-6 my-2">
+                                            <button type="submit" class="btn btn-primary text border-0" 
+                                            [disabled]="!form.valid" >Continuar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 d-block d-lg-none text-center my-5">
+                                    <a type="submit" class="btn btn-primary text border-0" style="padding-top:10px"
+                                    routerLink="/main/home" routerLinkActive="active">Volver</a>
+                            </div>
+
+                            <div style="margin-bottom: 40px;"></div>
+                        </div>
+                    </div>
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        </div>
+
+      
+
+        <div class="col-12 col-lg-6 d-none d-lg-flex">
+            <div class="container d-flex align-items-center justify-content-center caja">
+                <div class="row justify-content-center">
+                    <div class="col-12" style="padding: 100px;">
+                        <img src="../../assets/img/publicar.png" 
+                        class="img-fluid mx-auto d-block img_responsive" 
+                        alt="logo_rentease">
+                    </div>
+                    <div class="col-4" style="margin-top: 50px;">
+                        <a type="submit" class="btn btn-primary text border-0" style="padding-top:10px"
+                        routerLink="/main/home" routerLinkActive="active">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
